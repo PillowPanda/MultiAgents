@@ -40,6 +40,7 @@ def run_and_visualize_fast(episodes=3, width=10, height=10):
     for ep in range(1, episodes + 1):
         state = env.reset()
         for step in range(100):
+            # If the step reaches 100, go to next episode. 
             ax.set_title(f"Episode {ep}, Step {step}")
 
             for i, (x, y) in enumerate(env.agent_positions):
@@ -59,6 +60,5 @@ def run_and_visualize_fast(episodes=3, width=10, height=10):
     plt.ioff()
     plt.show()
 
-# If the step reaches 100, go to next episode. 
 if __name__ == "__main__":
     run_and_visualize_fast(episodes=100)
